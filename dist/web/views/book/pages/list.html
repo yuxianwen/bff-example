@@ -1,0 +1,36 @@
+<head><link href="../../../../assets/book-list.css" rel="stylesheet"></head>{% extends '../../layouts/index.html' %}
+{% block title %} 图书列表 {% endblock %}
+
+{% block head %} 
+
+<!-- 样式 -->
+
+{% endblock %}
+
+
+{% block content %}
+  <ul>
+    {% for book in data %}
+    <li>[[book.id]] - [[book.name]]</li>
+    {% endfor %}
+  </ul>
+
+  <button id="button">按钮2 </button>
+{% endblock %}
+
+
+{% block scripts %} 
+<!-- js -->
+<script src="/js/myUtils.js"></script>
+
+    <script>
+      var test = function () {
+        console.log(+new Date());
+      };
+      var test2 = _.throttle(test, 2000);
+      document.getElementById("button").addEventListener("click", test2);
+    </script>
+
+{% endblock %}
+
+<script src="../../../../assets/book-list.build.js"></script>

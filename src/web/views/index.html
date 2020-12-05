@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vue Page</title>
+  </head>
+  <body>
+    后端输出的数据：[[ message ]]
+    <div id="app">
+      <input v-model="message" />
+      {{ message }}
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+
+    <script src="/js/index.js"></script>
+
+    <!-- 支持module -->
+    <script type="module">
+      import("/js/data.js").then(res => {
+        console.log(res);
+      });
+    </script>
+
+    <!-- 兼容 不支持 nomodule -->
+    <script>
+      (function () {
+        var check = document.createElement("script");
+        if (!("noModule" in check) && "onbeforeload" in check) {
+          var support = false;
+          document.addEventListener(
+            "beforeload",
+            function (e) {
+              if (e.target === check) {
+                support = true;
+              } else if (!e.target.hasAttribute("nomodule") || !support) {
+                return;
+              }
+              e.preventDefault();
+            },
+            true
+          );
+
+          check.type = "module";
+          check.src = ".";
+          document.head.appendChild(check);
+          check.remove();
+        }
+      })();
+    </script>
+
+    <!-- 不支持module -->
+    <script
+      nomodule
+      src="https://cdn.bootcdn.net/ajax/libs/systemjs/6.5.0/system.min.js"
+    ></script>
+
+    <script nomodule>
+      console.log("不支持！");
+      System.import("/js/data_buildle.js").then(res => {
+        console.log(res);
+      });
+    </script>
+  </body>
+</html>
