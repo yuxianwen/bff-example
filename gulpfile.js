@@ -4,7 +4,7 @@ const watch = require('gulp-watch');
 
 
 function buildDev() {
-  return watch("./src/server/**/*.js")
+  return watch("./src/server/**/*.js", { ignoreInitial: false})
     .pipe(
       babel({
         babelrc: false,
