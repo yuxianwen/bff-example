@@ -5,6 +5,14 @@ let config = {
   staticDir: path.join(__dirname, "../../web", "assets")
 };
 
+
+
+console.log('Test')
+if(false) {
+
+  console.log('fefeeefefef')
+}
+
 if (process.env.NODE_ENV === "development") {
   const devConfig = {
     port: 3000,
