@@ -2,8 +2,9 @@ const gulp = require("gulp");
 const babel = require("gulp-babel");
 const watch = require("gulp-watch");
 const rollup = require("gulp-rollup");
+const replace = require("@rollup/plugin-replace");
 
-const entryPath =  "./src/server/**/*.js"
+const entryPath = "./src/server/**/*.js";
 
 // 清洗垃圾代码
 function clearConfig() {
@@ -13,8 +14,13 @@ function clearConfig() {
       rollup({
         input: "./src/server/config/index.js",
         output: {
-          format: 'cjs'
-        }
+          format: "cjs"
+        },
+        plugins: [
+          replace({
+            'process.env.NODE_ENV': "'production'"
+          })
+        ]
       })
     )
     .pipe(gulp.dest("./dist/server"));
