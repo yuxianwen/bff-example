@@ -45,7 +45,7 @@ const baseConfig = {
   entry: entrys,
   output: {
     path: path.join(__dirname, "./dist/web/assets"),
-    filename: "[name].build.js"
+    filename: "[name].[hash].js"
   },
   module: {
     rules: [
