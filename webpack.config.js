@@ -29,7 +29,7 @@ files.forEach(url => {
     ] = `./src/web/views/${pageName}/${pageName}-${actionName}.entry.js`;
     htmlPlugins.push(
       new HtmlWebpackPlugin({
-        filename: `../web/views/${pageName}/pages/${actionName}.html`,
+        filename: `../views/${pageName}/pages/${actionName}.html`,
         template: `./src/web/views/${pageName}/pages/${actionName}.html`,
         chunks: ["runtime", entryKey],
         inject: false
@@ -44,7 +44,7 @@ const baseConfig = {
   mode,
   entry: entrys,
   output: {
-    path: path.join(__dirname, "./dist/assets"),
+    path: path.join(__dirname, "./dist/web/assets"),
     filename: "[name].build.js"
   },
   module: {

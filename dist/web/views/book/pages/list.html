@@ -3,7 +3,7 @@
 
 {% block head %} 
 
-<link rel="stylesheet" src="../../../../assets/book-list.css"></link>
+<link rel="stylesheet" src="../../../assets/book-list.css"></link>
 
 {% endblock %}
 
@@ -20,7 +20,6 @@
 
 
 {% block scripts %} 
-<script src="../../../../assets/book-list.build.js"></script>
 <script src="/js/myUtils.js"></script>
 
     <script>
@@ -30,6 +29,7 @@
       var test2 = _.throttle(test, 2000);
       document.getElementById("button").addEventListener("click", test2);
     </script>
+<script src="../../../assets/book-list.build.js"></script>
 
 {% endblock %}
 
