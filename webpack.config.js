@@ -65,8 +65,8 @@ const baseConfig = {
     new MiniCssExtractPlugin(),
     new CopyPlugin({
       patterns: [
-        { from: path.join(__dirname, './src/web/views/layouts'),to: "../web/views/layouts" },
-        { from: path.join(__dirname, './src/web/components'), to: "../web/components" },
+        { from: path.join(__dirname, './src/web/views/layouts'),to: "../views/layouts" },
+        { from: path.join(__dirname, './src/web/components'), to: "../components" },
       ],
     }),
     new AfterHtmlPlugin()
