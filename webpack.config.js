@@ -3,7 +3,6 @@ const { merge } = require("webpack-merge");
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const CopyPlugin = require("copy-webpack-plugin");
 const AfterHtmlPlugin = require('./build/AfterHtmlPlugin')
 
 
@@ -63,12 +62,6 @@ const baseConfig = {
   plugins: [
     ...htmlPlugins,
     new MiniCssExtractPlugin(),
-    new CopyPlugin({
-      patterns: [
-        { from: path.join(__dirname, './src/web/views/layouts'),to: "../views/layouts" },
-        { from: path.join(__dirname, './src/web/components'), to: "../components" },
-      ],
-    }),
     new AfterHtmlPlugin()
   ]
 };

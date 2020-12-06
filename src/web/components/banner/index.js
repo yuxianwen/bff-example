@@ -1,5 +1,4 @@
-
-import './index.css'
+import "./index.css";
 function banner() {
   console.log("banner init");
 }
