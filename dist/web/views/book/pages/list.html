@@ -1,9 +1,9 @@
-<head><link href="../../../../assets/book-list.css" rel="stylesheet"></head>{% extends '../../layouts/index.html' %}
+{% extends '../../layouts/index.html' %}
 {% block title %} 图书列表 {% endblock %}
 
 {% block head %} 
 
-<!-- 样式 -->
+<link rel="stylesheet" src="../../../../assets/book-list.css"></link>
 
 {% endblock %}
 
@@ -20,7 +20,7 @@
 
 
 {% block scripts %} 
-<!-- js -->
+<script src="../../../../assets/book-list.build.js"></script>
 <script src="/js/myUtils.js"></script>
 
     <script>
@@ -33,4 +33,3 @@
 
 {% endblock %}
 
-<script src="../../../../assets/book-list.build.js"></script>
