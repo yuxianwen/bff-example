@@ -328,3 +328,15 @@
   syscall: 'open',
   path: '/Users/yuxianwen/Documents/books-manager/dist/web/views/index.html'
 }
+[2020-12-06T20:36:39.520] [ERROR] cheese - [Error: ENOENT: no such file or directory, open '/Users/yuxianwen/Documents/books-manager/dist/web/views/index.html'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/yuxianwen/Documents/books-manager/dist/web/views/index.html'
+}
+[2020-12-06T20:36:50.361] [ERROR] cheese - [Error: ENOENT: no such file or directory, open '/Users/yuxianwen/Documents/books-manager/dist/web/views/index.html'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/yuxianwen/Documents/books-manager/dist/web/views/index.html'
+}

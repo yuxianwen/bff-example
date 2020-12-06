@@ -1,9 +1,10 @@
 const gulp = require("gulp");
 const babel = require("gulp-babel");
+const watch = require('gulp-watch');
+
 
 function buildDev() {
-  return gulp
-    .src("./src/server/**/*.js")
+  return watch("./src/server/**/*.js")
     .pipe(
       babel({
         babelrc: false,
@@ -13,4 +14,10 @@ function buildDev() {
     .pipe(gulp.dest("dist/server"));
 }
 
-exports.default = gulp.series(buildDev);
+let build = null
+
+if(process.env.NODE_ENV === "development") {
+    build = gulp.series(buildDev);
+}
+
+gulp.task("default", build)

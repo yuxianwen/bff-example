@@ -35,5 +35,5 @@ app.use(serve(config.staticDir));
 initController(app);
 
 app.listen(config.port, () => {
-  console.log(`sever is running at http://localhost:${config.port}`);
+  console.log(`sever is running at http://localhost:${config.port} host Test!`);
 });
