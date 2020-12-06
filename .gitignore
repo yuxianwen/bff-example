@@ -34,3 +34,4 @@ tests/_support/_generated
 node_modules
 
 dist
+log
